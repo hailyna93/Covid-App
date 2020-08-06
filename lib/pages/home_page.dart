@@ -1,5 +1,5 @@
-import 'package:covid_app/core/my_flutter_app_icons.dart';
 import 'package:covid_app/pages/statistics_page.dart';
+import 'package:covid_app/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import '../core/constant.dart';
 
@@ -197,7 +197,7 @@ class _HomePageState extends State<HomePage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        buildAppBar(),
+        CustomAppBar(),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text(
@@ -259,32 +259,6 @@ class _HomePageState extends State<HomePage> {
         color: color,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
       ),
-    );
-  }
-
-  Row buildAppBar() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[
-        IconButton(
-          icon: Icon(
-            MyFlutterApp.short_text,
-            color: Colors.white,
-          ),
-          onPressed: () {},
-        ),
-        Container(
-          width: 50,
-          height: 50,
-          margin: EdgeInsets.all(16),
-          decoration: BoxDecoration(
-              border: Border.all(color: Colors.white),
-              borderRadius: BorderRadius.circular(100),
-              image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage("assets/images/profile.jpg"))),
-        )
-      ],
     );
   }
 }
